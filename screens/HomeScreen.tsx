@@ -15,7 +15,12 @@ export default function HomeScreen({
           {pins
             .filter((_, index) => index % 2 === 0)
             .map((pin) => (
-              <Pin key={pin.id} title={pin.title} imageUri={pin.image} />
+              <Pin
+                key={pin.id}
+                id={pin.id}
+                title={pin.title}
+                imageUri={pin.image}
+              />
             ))}
         </View>
 
@@ -23,7 +28,12 @@ export default function HomeScreen({
           {pins
             .filter((_, index) => index % 2 === 1)
             .map((pin) => (
-              <Pin key={pin.id} title={pin.title} imageUri={pin.image} />
+              <Pin
+                key={pin.id}
+                id={pin.id}
+                title={pin.title}
+                imageUri={pin.image}
+              />
             ))}
         </View>
       </View>
