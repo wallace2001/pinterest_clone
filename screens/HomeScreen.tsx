@@ -9,21 +9,34 @@ export default function HomeScreen({
   navigation,
 }: RootTabScreenProps<"TabOne">) {
   return (
-    <View style={styles.container}>
-      <ScrollView>
-        {pins.map((pin) => (
-          <Pin key={pin.id} title={pin.title} imageUri={pin.image} />
-        ))}
-      </ScrollView>
-    </View>
+    <ScrollView>
+      <View style={styles.container}>
+        <View style={styles.column}>
+          {pins
+            .filter((_, index) => index % 2 === 0)
+            .map((pin) => (
+              <Pin key={pin.id} title={pin.title} imageUri={pin.image} />
+            ))}
+        </View>
+
+        <View style={styles.column}>
+          {pins
+            .filter((_, index) => index % 2 === 1)
+            .map((pin) => (
+              <Pin key={pin.id} title={pin.title} imageUri={pin.image} />
+            ))}
+        </View>
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
     padding: 10,
+    flexDirection: "row",
+  },
+  column: {
+    flex: 1,
   },
 });

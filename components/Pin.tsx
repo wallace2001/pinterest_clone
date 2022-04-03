@@ -31,7 +31,7 @@ export const Pin = ({title, imageUri}: PropsPin) => {
             </Pressable>
         </View>
 
-      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.title} numberOfLines={2}>{title}</Text>
     </View>
   );
 };
@@ -39,6 +39,7 @@ export const Pin = ({title, imageUri}: PropsPin) => {
 const styles = StyleSheet.create({
   pinContainer: {
     width: "100%",
+    padding: 4,
   },
   image: {
     width: "100%",
@@ -46,8 +47,10 @@ const styles = StyleSheet.create({
     aspectRatio: 1 / 1, 
   },
   title: {
-    fontSize: 20,
-    fontWeight: "bold",
+    fontSize: 16,
+    lineHeight: 22,
+    fontWeight: "600",
+    color: "#181818",
     margin: 5,
   },
   heartButton: {
